@@ -21,19 +21,40 @@ let mailResults = false;
 let textResults = '';
 const output = document.getElementById('output');
 const gioca = document.getElementById('gioca');
+const gameResults = document.getElementById('game-results');
+// console.log(gameResults);
 
 for(let i = 0; i < mail.length; i++){
   if(userMail == mail[i]){
     mailResults = true
     // console.log(mailResults)
     textResults = 'La mail da lei inserita è corretta, ora può accedere al gioco dei dadi!'
-    const btnGioca = document.createElement('div');
+    const btnGioca = document.createElement('button');
     // console.log(btnGioca);
     btnGioca.className = "btn btn-outline-dark";
     btnGioca.innerHTML = 'Gioca';
     gioca.append(btnGioca);
+
+    btnGioca.addEventListener('click',function(){
+  
+      const dadoPlayer = Math.floor(Math.random()*6) + 1;
+      console.log('Player', dadoPlayer);
+      const dadoPc = Math.floor(Math.random()*6) + 1;
+      console.log('PC', dadoPc);
+
+      if(dadoPlayer > dadoPc){
+        console.log('hai vinto!');
+      }else if (dadoPlayer < dadoPc){
+        console.log('hai perso');
+      }else{
+        console.log('Pareggio!')
+      }
+    })
   }
 }
+
+
+
 if(!(mailResults)){
   textResults = 'La mail è errata oppure non autorizzata, inserire un\'altra mail.';
 }
