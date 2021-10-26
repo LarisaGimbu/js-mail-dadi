@@ -12,7 +12,7 @@
 const mail = ['alberto@gmail.com', 'giuseppe@gmail.com', 'cristoforo@gmail.com', 'samantha@gmail.com']
 // console.log(mail);
 
-const userMail = 'alberto@gmail.com'; //prompt
+const userMail = prompt('Inserire la propria Mail:');
 // console.log(userMail);
 
 let mailResults = false;
