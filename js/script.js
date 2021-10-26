@@ -19,19 +19,25 @@ let mailResults = false;
 // console.log(mailResults)
 
 let textResults = '';
-
+const output = document.getElementById('output');
+const gioca = document.getElementById('gioca');
 
 for(let i = 0; i < mail.length; i++){
   if(userMail == mail[i]){
     mailResults = true
     // console.log(mailResults)
-    textResults = 'La mail da lei inserita è corretta'
+    textResults = 'La mail da lei inserita è corretta, ora può accedere al gioco dei dadi!'
+    const btnGioca = document.createElement('div');
+    // console.log(btnGioca);
+    btnGioca.className = "btn btn-outline-dark";
+    btnGioca.innerHTML = 'Gioca';
+    gioca.append(btnGioca);
   }
 }
 if(!(mailResults)){
-  textResults = 'La mail è errata oppure non autorizzata, inserire un\'altra mail';
+  textResults = 'La mail è errata oppure non autorizzata, inserire un\'altra mail.';
 }
 
 // console.log(textResults);
 
-const output = document.getElementById('output').innerHTML = textResults;
+output.innerHTML = textResults;
