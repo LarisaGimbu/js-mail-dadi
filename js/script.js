@@ -43,11 +43,11 @@ for(let i = 0; i < mail.length; i++){
       console.log('PC', dadoPc);
 
       if(dadoPlayer > dadoPc){
-        console.log('hai vinto!');
+        gameResults.innerHTML = `<h2> Congratulazioni, hai vinto! </h2> il tuo dato ha dato ${dadoPlayer} mentre Il computer ha tirato ${dadoPc}. `
       }else if (dadoPlayer < dadoPc){
-        console.log('hai perso');
+        gameResults.innerHTML = `<h2> Peccato, hai perso!</h2> Il tuo dato ha dato ${dadoPlayer} mentre il computer ha tirato ${dadoPc}. `
       }else{
-        console.log('Pareggio!')
+        gameResults.innerHTML = `<h2> Pareggio, ritenta!</h2> Sia il tuo dado che il computer avete tirato ${dadoPc} `
       }
     })
   }
